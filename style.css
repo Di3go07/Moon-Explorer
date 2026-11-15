@@ -1,0 +1,452 @@
+/* ==========================================================================
+   MOON EXPLORER — VISUAL IDENTITY & DESIGN SYSTEM (DARK EDITION)
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --color-mauve-muted: #A27A86;
+  --color-gray-purple: #77686D;
+  --color-pink-accent: #CB7790;
+  --color-mauve-dark: #4D363D;
+  --color-bg-deep: #331C23;
+  --color-bg-darkest: #33131D; /* Fundo principal ultra escuro */
+
+  /* Derived Soft Highlights & Glassmorphism */
+  --color-text-primary: #FDF7F9;
+  --color-text-secondary: #D4BDC6;
+  --color-glass-surface: rgba(33, 15, 21, 0.72);
+  --color-glass-hover: rgba(51, 28, 35, 0.88);
+  --color-border-soft: rgba(162, 122, 134, 0.18);
+  --color-border-glow: rgba(203, 119, 144, 0.45);
+
+  /* Typography */
+  --font-heading: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+
+  /* Margins / Spacing Tokens */
+  --margin-xl: 128px;
+  --margin-md: 42px;
+  --margin-sm: 24px;
+
+  /* Radii & Shadows */
+  --radius-card: 28px;
+  --radius-pill: 999px;
+  --shadow-atmospheric: 0 28px 70px rgba(10, 2, 5, 0.85);
+  --glow-pink: 0 0 32px rgba(203, 119, 144, 0.28);
+}
+
+/* ==========================================================================
+   RESET & BASE SCALE (Base 8px -> uso de 'em' para escala tipográfica)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 8px; /* Base solicitada: 1em = 8px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 2em; /* 16px */
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  background: radial-gradient(circle at 80% 15%, rgba(77, 54, 61, 0.22) 0%, transparent 40%),
+              radial-gradient(circle at 10% 70%, rgba(51, 28, 35, 0.35) 0%, transparent 50%),
+              linear-gradient(180deg, var(--color-bg-darkest) 0%, #200A11 60%, #15050A 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ==========================================================================
+   ATMOSPHERIC STARFIELD & COSMIC PARTICLES
+   ========================================================================== */
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.starfield::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 14%, #FDF7F9 90%, transparent),
+    radial-gradient(2px 2px at 22% 38%, var(--color-pink-accent) 85%, transparent),
+    radial-gradient(1px 1px at 35% 12%, #FDF7F9 90%, transparent),
+    radial-gradient(2.5px 2.5px at 48% 28%, var(--color-mauve-muted) 80%, transparent),
+    radial-gradient(1.5px 1.5px at 64% 16%, #FDF7F9 90%, transparent),
+    radial-gradient(2px 2px at 78% 42%, var(--color-pink-accent) 85%, transparent),
+    radial-gradient(1px 1px at 91% 22%, #FDF7F9 90%, transparent),
+    radial-gradient(2px 2px at 14% 72%, var(--color-mauve-muted) 85%, transparent),
+    radial-gradient(1.5px 1.5px at 31% 84%, #FDF7F9 90%, transparent),
+    radial-gradient(2.5px 2.5px at 56% 76%, var(--color-pink-accent) 80%, transparent),
+    radial-gradient(1.5px 1.5px at 74% 88%, #FDF7F9 90%, transparent),
+    radial-gradient(2px 2px at 88% 68%, var(--color-mauve-muted) 85%, transparent);
+  background-size: 650px 650px;
+  opacity: 0.75;
+  animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: -50px;
+  background-image:
+    radial-gradient(4px 4px at 18% 24%, rgba(203, 119, 144, 0.2) 0%, transparent 100%),
+    radial-gradient(6px 6px at 68% 34%, rgba(162, 122, 134, 0.18) 0%, transparent 100%),
+    radial-gradient(5px 5px at 42% 62%, rgba(203, 119, 144, 0.16) 0%, transparent 100%),
+    radial-gradient(3px 3px at 84% 79%, rgba(253, 247, 249, 0.25) 0%, transparent 100%);
+  background-size: 500px 500px;
+  animation: floatParticles 18s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.45; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes floatParticles {
+  0% { transform: translateY(0px) translateX(0px); }
+  100% { transform: translateY(-24px) translateX(14px); }
+}
+
+/* ==========================================================================
+   CUSTOM SCROLLBAR (Transparent & Atmospheric)
+   ========================================================================== */
+
+/* Para navegadores baseados em Chromium (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra vertical */
+  height: 12px; /* Altura da barra horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Fundo totalmente transparente */
+}
+
+::-webkit-scrollbar-thumb {
+  background:  linear-gradient(135deg, var(--color-pink-accent) 0%, #B35D77 100%) 
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(203, 119, 144, 0.75); /* Acende com o rosa accent ao passar o mouse */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-color: rgba(162, 122, 134, 0.38) transparent; /* Thumb translúcido e track transparente */
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 5em;
+  background: linear-gradient(135deg, #FFFFFF 20%, var(--color-mauve-muted) 65%, var(--color-pink-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 6px 24px rgba(203, 119, 144, 0.25));
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+.chapter {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.8em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-pink-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.chapter .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-pink-accent);
+  box-shadow: 0 0 12px var(--color-pink-accent);
+  display: inline-block;
+}
+
+#highlighted {
+  color: #CB7790;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95em;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s ease,
+              background 0.3s ease,
+              border-color 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: #CB7790;
+  color: black;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(203, 119, 144, 0.52),
+              inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary {
+  background: rgba(33, 15, 21, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-soft);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(162, 122, 134, 0.25);
+  border-color: var(--color-pink-accent);
+  box-shadow: var(--glow-pink);
+}
+
+.btn-card {
+  width: 100%;
+  margin-top: auto;
+  padding: 12px 22px;
+  background: rgba(33, 15, 21, 0.65);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-soft);
+}
+
+.btn-card:hover {
+  background: var(--color-pink-accent);
+  border-color: var(--color-pink-accent);
+  color: #FFFFFF;
+  box-shadow: 0 8px 22px rgba(203, 119, 144, 0.4);
+}
+
+.btn-large {
+  font-size: 1.05em;
+  padding: 18px 40px;
+}
+
+/* ==========================================================================
+   NAVBAR & MOBILE MENU
+   ========================================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--margin-sm) var(--margin-xl);
+  background: rgba(33, 15, 21, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(162, 122, 134, 0.12);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(203, 119, 144, 0.4);
+}
+
+.logo p {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25em;
+  letter-spacing: 0.06em;
+  color: var(--color-text-primary);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: var(--margin-md);
+}
+
+.menu a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1em;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  position: relative;
+  padding: 6px 4px;
+  transition: color 0.25s ease;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  border-radius: 4px;
+  background: var(--color-pink-accent);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: #FFFFFF;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  border-radius: 4px;
+  background: var(--color-text-primary);
+  transition: 0.3s ease;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 2, 5, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 90;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 290px;
+  height: 100vh;
+  background: linear-gradient(180deg, var(--color-mauve-dark) 0%, var(--color-bg-darkest) 100%);
+  border-left: 1px solid var(--color-border-soft);
+  padding: var(--margin-md) var(--margin-sm);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-md);
+  transition: right 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.side-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.side-menu-header p {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15em;
+}
+
+.close-menu {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-soft);
+  color: var(--color-text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.side-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-sm);
+}
+
+.side-menu-links a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25em;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
