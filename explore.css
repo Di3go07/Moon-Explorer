@@ -1,0 +1,627 @@
+/* =========================================
+   EXPLORER - LAYOUT PRINCIPAL
+========================================= */
+
+.explorer {
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 96px);
+    width: 100%;
+    padding: var(--margin-md);
+    gap: var(--margin-sm);
+    align-items: stretch;
+}
+
+@media (min-width: 1101px) {
+    .explorer.selected-state {
+        height: calc(100svh - 90px);
+        min-height: 600px;
+        padding: 14px 20px;
+        gap: 14px;
+    }
+
+    .explorer.selected-state > .moon-panel,
+    .explorer.selected-state > .object-panel,
+    .explorer.selected-state > .details-panel {
+        height: 100%;
+        padding: 14px;
+    }
+
+    .explorer.selected-state .panel-label {
+        font-size: 1em;
+        margin-bottom: 6px;
+    }
+
+    .explorer.selected-state .object-viewer,
+    .explorer.selected-state .object-viewer model-viewer {
+        min-height: 0;
+    }
+
+    .explorer.selected-state .object-info h1 {
+        font-size: 1.4em;
+        margin: 4px 0;
+    }
+
+    .explorer.selected-state .object-mission {
+        font-size: 1em;
+        margin-bottom: 0;
+    }
+
+    .explorer.selected-state .details-panel {
+        grid-template-rows: repeat(5, auto);
+        align-content: safe center;
+    }
+
+    .explorer.selected-state .dashboard-card {
+        padding: 10px;
+    }
+
+    .explorer.selected-state .mission-card,
+    .explorer.selected-state .funfact-card {
+        padding: 6px 10px;
+    }
+
+    .explorer.selected-state .funfact-card h2 {
+        margin-bottom: 3px;
+    }
+
+    .explorer.selected-state .dashboard-card h2 {
+        font-size: 0.95em;
+    }
+
+    .explorer.selected-state .dashboard-card p,
+    .explorer.selected-state .mission-summary dd,
+    .explorer.selected-state .timeline-item p {
+        font-size: 0.9em;
+}
+
+/* ESTADO INICIAL */
+
+.explorer.initial-state {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explorer.initial-state .moon-panel {
+    width: min(650px, 90vw);
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.explorer.initial-state .moon-container {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1;
+}
+
+.explorer.initial-state .moon-instruction {
+    margin-top: 20px;
+}
+
+
+/* ESTADO COM EQUIPAMENTO SELECIONADO */
+
+.explorer.selected-state {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.8fr) minmax(230px, 1fr) minmax(0, 2fr);
+    animation: explorerAppear 0.7s ease forwards;
+}
+
+.explorer.selected-state .moon-panel {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ELEMENTOS OCULTOS */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   PAINÉIS
+========================================= */
+
+.moon-panel,
+.object-panel,
+.details-panel {
+    position: relative;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-card);
+    background: var(--color-glass-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    overflow: hidden;
+}
+
+.panel-label {
+    color: var(--color-pink-accent);
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   LUA
+========================================= */
+
+.moon-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 500px;
+    margin: auto;
+}
+
+.moon-container model-viewer {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+}
+
+.moon-instruction {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    animation: instructionPulse 2s infinite ease-in-out;
+}
+
+
+/* =========================================
+   REGIÕES CLICÁVEIS DA LUA
+========================================= */
+
+.moon-region {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--color-text-primary);
+    background: var(--color-pink-accent);
+    box-shadow:
+        0 0 10px var(--color-pink-accent),
+        0 0 25px var(--color-border-glow);
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s ease;
+    animation: regionPulse 2s infinite;
+}
+
+.moon-region:hover,
+.moon-region.active {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: var(--color-text-primary);
+    box-shadow:
+        0 0 15px var(--color-text-primary),
+        0 0 35px var(--color-pink-accent);
+}
+
+.moon-region:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 5px;
+}
+
+
+/* =========================================
+   MODELO 3D DO EQUIPAMENTO
+========================================= */
+
+.object-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    animation: panelAppear 0.6s ease forwards;
+}
+
+.object-panel > .panel-label {
+    grid-column: 1 / -1;
+}
+
+.object-viewer {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.object-viewer model-viewer {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    background: transparent;
+}
+
+.object-loading {
+    position: absolute;
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1em;
+    pointer-events: none;
+}
+
+.object-info {
+    align-self: center;
+    min-width: 0;
+    padding: 8px 0 0;
+    text-align: center;
+}
+
+.object-info h1 {
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    overflow-wrap: anywhere;
+    margin: 4px 0;
+}
+
+.object-mission {
+    color: var(--color-text-secondary);
+    font-size: 1em;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.details-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+        "label label"
+        "mission mission"
+        "story timeline"
+        "funfact funfact"
+        "navigation navigation";
+    gap: 10px;
+    align-content: center;
+    animation: panelAppear 0.8s ease forwards;
+    overflow-y: auto;
+}
+
+.details-panel > .panel-label {
+    grid-area: label;
+    margin: 0;
+}
+
+.dashboard-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 14px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 16px;
+    background: rgba(33, 15, 21, 0.45);
+}
+
+.dashboard-card h2 {
+    color: var(--color-pink-accent);
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: var(--color-text-secondary);
+    font-size: 1em;
+    line-height: 1.3;
+}
+
+.mission-card {
+    grid-area: mission;
+    padding: 10px 14px;
+}
+
+.mission-summary {
+    display: grid;
+    grid-template-columns: 0.8fr 0.65fr 1.55fr;
+    gap: 12px;
+}
+
+.mission-summary div {
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 12px;
+    background: rgba(33, 15, 21, 0.4);
+}
+
+.mission-summary dt {
+    color: var(--color-pink-accent);
+    font-family: var(--font-heading);
+    font-size: 0.9em;
+    letter-spacing: 0.4px;
+}
+
+.mission-summary dd {
+    color: var(--color-text-primary);
+    font-size: 1em;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   HISTÓRIA
+========================================= */
+
+.story-card {
+    grid-area: story;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.timeline-card {
+    grid-area: timeline;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.story-section h3 {
+    color: var(--color-text-primary);
+    font-family: var(--font-heading);
+    font-size: 1em;
+    margin-bottom: 3px;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    padding-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 16px;
+    border-left: 2px solid var(--color-border-glow);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-pink-accent);
+    box-shadow: 0 0 12px var(--color-pink-accent);
+}
+
+.timeline-item h3 {
+    color: var(--color-pink-accent);
+    font-family: var(--font-heading);
+    font-size: 1em;
+    margin-bottom: 2px;
+}
+
+.timeline-item p {
+    color: var(--color-text-secondary);
+    font-size: 0.95em;
+    line-height: 1.25;
+}
+
+
+/* =========================================
+   CURIOSIDADE
+========================================= */
+
+.funfact-card {
+    grid-area: funfact;
+    padding: 10px 14px;
+    border-color: var(--color-border-glow);
+    background: linear-gradient(
+        135deg,
+        rgba(77, 54, 61, 0.45),
+        rgba(33, 15, 21, 0.7)
+    );
+}
+
+.funfact-card h2::before {
+    content: "✦ ";
+    color: var(--color-pink-accent);
+}
+
+
+/* =========================================
+   NAVEGAÇÃO ENTRE EQUIPAMENTOS
+========================================= */
+
+.artifact-navigation {
+    grid-area: navigation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 0;
+}
+
+.artifact-navigation button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--color-border-glow);
+    border-radius: 50%;
+    background: var(--color-glass-surface);
+    color: var(--color-text-primary);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.artifact-navigation button:hover {
+    background: var(--color-pink-accent);
+    transform: scale(1.1);
+}
+
+#artifact-counter {
+    color: var(--color-text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+@keyframes regionPulse {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--color-pink-accent);
+    }
+
+    50% {
+        box-shadow: 0 0 25px var(--color-pink-accent);
+    }
+}
+
+@keyframes instructionPulse {
+    0%, 100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes panelAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes explorerAppear {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .explorer.selected-state {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .explorer.selected-state .details-panel {
+        grid-column: 1 / -1;
+        grid-template-rows: repeat(5, auto);
+    }
+
+    .explorer.selected-state .moon-panel {
+        min-height: 350px;
+    }
+
+    .explorer.selected-state .object-panel {
+        min-height: 320px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .explorer {
+        padding: 15px;
+    }
+
+    .explorer.initial-state .moon-panel {
+        min-height: 400px;
+    }
+
+    .explorer.selected-state {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .explorer.selected-state .moon-panel {
+        min-height: 300px;
+    }
+
+    .explorer.selected-state .moon-container {
+        max-width: 350px;
+    }
+
+    .object-panel {
+        min-height: 300px;
+    }
+
+    .details-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .dashboard-card {
+        padding: 18px;
+    }
+
+    .mission-summary {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .object-viewer,
+    .object-viewer model-viewer {
+        min-height: 180px;
+    }
+
+    .object-info {
+        padding: 8px 0 0;
+    }
+
+    .story-card,
+    .timeline {
+        overflow: visible;
+    }
+
+}

@@ -14,7 +14,7 @@
         />
 
         <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="home.css" />
+        <link rel="stylesheet" href="explore.css" />
 
         <script
         type="module"
@@ -74,191 +74,178 @@
         >
         </aside>
 
-        <main class="explorer">
+        <main class="explorer initial-state" id="explorer">
 
-            <!-- 01. LUA / SELEÇÃO -->
-            <section class="moon-panel">
-                <div class="panel-label">
-                    <span>01</span>
-                    <p>LUNAR MAP</p>
+    <!-- PAINEL DA LUA -->
+    <section class="moon-panel">
+        <div class="panel-label">MOON EXPLORER</div>
+
+        <div class="moon-container">
+            <model-viewer
+                src="./assets/Moon_New.glb"
+                alt="3D Model of the Moon"
+                camera-controls
+                disable-pan
+                disable-zoom
+                shadow-intensity="0"
+                exposure="1"
+            ></model-viewer>
+
+            <!-- REGIÕES CLICÁVEIS -->
+            <button
+                class="moon-region"
+                data-object="0"
+                style="--x: 35%; --y: 35%;"
+                aria-label="Selecionar equipamento 1"
+            ></button>
+
+            <button
+                class="moon-region"
+                data-object="1"
+                style="--x: 65%; --y: 40%;"
+                aria-label="Selecionar equipamento 2"
+            ></button>
+
+            <button
+                class="moon-region"
+                data-object="2"
+                style="--x: 45%; --y: 65%;"
+                aria-label="Selecionar equipamento 3"
+            ></button>
+
+            <button
+                class="moon-region"
+                data-object="3"
+                style="--x: 70%; --y: 70%;"
+                aria-label="Selecionar equipamento 4"
+            ></button>
+        </div>
+
+        <p class="moon-instruction" id="moon-instruction">
+            SELECT A LOCATION ON THE MOON
+        </p>
+    </section>
+
+
+    <!-- PAINEL DO EQUIPAMENTO -->
+    <section class="object-panel hidden" id="object-panel">
+
+        <div class="panel-label">MISSION ARTIFACT</div>
+
+        <div class="object-viewer">
+            <model-viewer
+                id="artifact-model"
+                src=""
+                alt="3D Model of the selected equipment"
+                camera-controls
+                disable-pan
+                auto-rotate
+                rotation-per-second="8deg"
+                shadow-intensity="0"
+                exposure="1"
+            ></model-viewer>
+
+            <div class="object-loading" id="object-loading">
+                LOADING MODEL...
+            </div>
+        </div>
+
+        <div class="object-info">
+
+            <h1 id="object-name">Equipment name</h1>
+
+            <p class="object-mission" id="object-mission">
+                Mission name
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section class="details-panel hidden" id="details-panel">
+
+        <div class="panel-label">MISSION DASHBOARD</div>
+
+        <!-- DETALHES DA MISSÃO -->
+        <article class="dashboard-card mission-card">
+            <dl class="mission-summary">
+                <div>
+                    <dt>Mission</dt>
+                    <dd id="details-mission">--</dd>
                 </div>
-
-                <div class="moon-container">
-                    <model-viewer
-                        src="./assets/Moon_New.glb"
-                        alt="Interactive 3D Moon"
-                        camera-controls
-                        disable-pan
-                        disable-zoom
-                        shadow-intensity="0"
-                        exposure="1"
-                        orientation="45deg -180deg 0deg"
-                    ></model-viewer>
-
-                    <!-- Regiões clicáveis -->
-                    <button class="moon-region active"
-                        data-object="0" style="--x: 35%; --y: 35%;">
-                        <span>01</span>
-                    </button>
-
-                    <button class="moon-region"
-                        data-object="1" style="--x: 65%; --y: 43%;">
-                        <span>02</span>
-                    </button>
-
-                    <button class="moon-region"
-                        data-object="2" style="--x: 42%; --y: 65%;">
-                        <span>03</span>
-                    </button>
-
-                    <button class="moon-region"
-                        data-object="3" style="--x: 70%; --y: 72%;">
-                        <span>04</span>
-                    </button>
+                <div>
+                    <dt>Equipment mass</dt>
+                    <dd id="details-mass">--</dd>
                 </div>
-
-                <div class="moon-legend">
-                    <span class="legend-dot"></span>
-                    <p>SELECT A LUNAR LOCATION</p>
+                <div>
+                    <dt>Current status</dt>
+                    <dd id="details-status">--</dd>
                 </div>
-            </section>
+            </dl>
+        </article>
+
+        <!-- HISTÓRIA -->
+        <article class="dashboard-card story-card">
+
+            <h2>02 / THE STORY</h2>
+
+            <div class="story-section">
+                <h3>About the equipment</h3>
+                <p id="story-info"></p>
+            </div>
+
+            <div class="story-section">
+                <h3>Why is it important?</h3>
+                <p id="story-importance"></p>
+            </div>
+
+            <div class="story-section">
+                <h3>Mission context</h3>
+                <p id="story-context"></p>
+            </div>
+
+        </article>
 
 
-            <!-- 02. OBJETO 3D -->
-            <section class="object-panel">
+        <!-- LINHA DO TEMPO -->
+        <article class="dashboard-card timeline-card">
 
-                <div class="panel-label">
-                    <span>02</span>
-                    <p>MISSION ARTIFACT</p>
-                </div>
+            <h2>03 / MISSION TIMELINE</h2>
 
-                <div class="object-viewer">
-                    <model-viewer
-                        id="artifact-model"
-                        src=""
-                        alt="Selected space artifact"
-                        camera-controls
-                        auto-rotate
-                        rotation-per-second="8deg"
-                        shadow-intensity="0"
-                        exposure="1"
-                        interaction-prompt="none"
-                        loading="eager"
-                    ></model-viewer>
+            <div class="timeline" id="mission-timeline"></div>
 
-                    <div class="object-loading" id="object-placeholder">
-                        <span>SELECT AN ARTIFACT</span>
-                        <p>Explore the Moon to discover its history.</p>
-                    </div>
-                </div>
-
-                <div class="object-info">
-                    <span class="object-status" id="object-status">
-                        MISSION ARTIFACT
-                    </span>
-
-                    <h1 id="object-name">Explore the Moon</h1>
-
-                    <p id="object-mission">
-                        Select a lunar region to discover an artifact.
-                    </p>
-
-                    <div class="object-metadata">
-                        <div>
-                            <span>01 / MASS</span>
-                            <p id="object-mass">—</p>
-                        </div>
-
-                        <div>
-                            <span>02 / STATUS</span>
-                            <p id="object-condition">—</p>
-                        </div>
-                    </div>
-
-                    <a id="object-link"
-                    class="btn btn-secondary"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                        EXPLORE MISSION ↗
-                    </a>
-                </div>
-
-            </section>
+        </article>
 
 
-            <!-- 03. DASHBOARD -->
-            <section class="details-panel">
+        <!-- CURIOSIDADE -->
+        <article class="dashboard-card funfact-card">
 
-                <div class="panel-label">
-                    <span>03</span>
-                    <p>MISSION DATABASE</p>
-                </div>
+            <h2>04 / DID YOU KNOW?</h2>
 
-                <!-- HISTÓRIA -->
-                <article class="dashboard-card story-card">
-                    <span class="dashboard-category">DISCOVERY / HISTORY</span>
+            <p id="object-funfact"></p>
 
-                    <h2>Beyond the Mission</h2>
-
-                    <p id="story-info">
-                        Discover the story behind this artifact.
-                    </p>
-
-                    <div class="story-highlight">
-                        <span>WHY IT MATTERS</span>
-                        <p id="story-importance"></p>
-                    </div>
-
-                    <div class="story-context">
-                        <span>HISTORICAL CONTEXT</span>
-                        <p id="story-context"></p>
-                    </div>
-                </article>
+        </article>
 
 
-                <!-- LINHA DO TEMPO -->
-                <article class="dashboard-card timeline-card">
-                    <span class="dashboard-category">MISSION / CHRONOLOGY</span>
+        <!-- NAVEGAÇÃO -->
+        <div class="artifact-navigation">
 
-                    <h2>Mission Timeline</h2>
+            <button id="previous-artifact" aria-label="Previous equipment">
+                ←
+            </button>
 
-                    <div class="timeline" id="mission-timeline">
-                        <!-- Gerado pelo JavaScript -->
-                    </div>
-                </article>
+            <span id="artifact-counter">0 / 0</span>
 
+            <button id="next-artifact" aria-label="Next equipment">
+                →
+            </button>
 
-                <!-- CURIOSIDADE -->
-                <article class="dashboard-card funfact-card">
-                    <div class="funfact-icon">✦</div>
+        </div>
 
-                    <div>
-                        <span class="dashboard-category">DID YOU KNOW?</span>
+    </section>
 
-                        <h3>A Cosmic Fact</h3>
-
-                        <p id="object-funfact">
-                            Every artifact has a story worth discovering.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- NAVEGAÇÃO -->
-                <div class="artifact-navigation">
-                    <button id="previous-artifact" class="btn btn-secondary">
-                        ← PREVIOUS
-                    </button>
-
-                    <span id="artifact-counter">01 / 04</span>
-
-                    <button id="next-artifact" class="btn btn-secondary">
-                        NEXT →
-                    </button>
-                </div>
-
-            </section>
-
-        </main>
+</main>
+        <script src="./scripts/explore.js"></script>
     </body>
 </html>

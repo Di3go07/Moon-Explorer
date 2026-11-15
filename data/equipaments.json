@@ -1,0 +1,112 @@
+{
+    "equipaments": [
+        {
+            "nome": "Apollo Lunar Modules",
+            "missao": "Apollo 11",
+            "mass": 2000,
+            "status": "Abandonado na superfície lunar",
+            "link": "https://www.nasa.gov/apollo11",
+            "story": {
+                "info": "O estágio de descida do Módulo Lunar Eagle foi a base que pousou os primeiros humanos na Lua em 20 de julho de 1969. Após a decolagem do estágio de ascensão, ele permaneceu na superfície.",
+                "importance": "Serviu como plataforma de lançamento improvisada para o estágio de ascensão retornar à órbita lunar, marcando o primeiro pouso tripulado na Lua.",
+                "context": "Durante a missão Apollo 11, Neil Armstrong e Buzz Aldrin pousaram no Mar da Tranquilidade, enquanto Michael Collins os aguardava em órbita."
+            },
+            "timeline": [
+                {
+                    "data": "16/07/1969",
+                    "fact": "Lançamento da missão Apollo 11 do Cabo Canaveral."
+                },
+                {
+                    "data": "20/07/1969",
+                    "fact": "Pouso do Eagle no Mar da Tranquilidade e primeira caminhada lunar."
+                },
+                {
+                    "data": "21/07/1969",
+                    "fact": "Decolagem do estágio de ascensão, deixando o estágio de descida para trás."
+                }
+            ],
+            "funfact": "O estágio de descida do Eagle permanece no Mar da Tranquilidade até hoje, servindo como um marco histórico (não verificado) da exploração humana."
+        },
+        {
+            "nome": "Lunar Roving Vehicles (LRVs)",
+            "missao": "Apollo 12",
+            "mass": 210,
+            "status": "Estacionado permanentemente na Lua",
+            "link": "https://www.nasa.gov/lunar-roving-vehicle",
+            "story": {
+                "info": "Três veículos elétricos foram usados nas últimas missões Apollo para permitir que os astronautas percorressem distâncias maiores na superfície lunar.",
+                "importance": "Ampliou enormemente o alcance científico das missões, permitindo coletar amostras em locais distantes do módulo lunar.",
+                "context": "Cada LRV foi projetado para operar em gravidade lunar e temperaturas extremas, sendo dobrado para caber no módulo lunar durante o transporte."
+            },
+            "timeline": [
+                {
+                    "data": "30/07/1971",
+                    "fact": "Primeiro uso do LRV na Apollo 15, por David Scott e James Irwin."
+                },
+                {
+                    "data": "21/04/1972",
+                    "fact": "LRV da Apollo 16 percorre mais de 26 km na região de Descartes."
+                },
+                {
+                    "data": "11/12/1972",
+                    "fact": "LRV da Apollo 17 é o último a ser estacionado na Lua, no Vale Taurus-Littrow."
+                }
+            ],
+            "funfact": "Os três 'moon buggies' foram deixados para trás e ainda estão na Lua — um deles tem até uma placa comemorativa (dados fictícios para fins ilustrativos)."
+        },
+        {
+            "nome": "ALSEP Scientific Packages",
+            "missao": "Apollo 16",
+            "mass": 75,
+            "status": "Operacional por décadas após o fim das missões",
+            "link": "https://www.nasa.gov/alsep",
+            "story": {
+                "info": "Conjunto de experimentos científicos deixados na superfície lunar para coletar dados sobre sismologia, atmosfera, magnetismo e composição do solo.",
+                "importance": "Forneceu dados valiosos por anos, incluindo registros de terremotos lunares e medições de partículas solares.",
+                "context": "Cada pacote era alimentado por geradores termoelétricos radioisotópicos (RTGs) e transmitia dados para a Terra."
+            },
+            "timeline": [
+                {
+                    "data": "19/11/1969",
+                    "fact": "ALSEP da Apollo 12 é o primeiro a ser instalado e operar na Lua."
+                },
+                {
+                    "data": "31/07/1971",
+                    "fact": "ALSEP da Apollo 15 é instalado e começa a transmitir dados sísmicos."
+                },
+                {
+                    "data": "30/09/1977",
+                    "fact": "Último ALSEP é desligado por falta de energia, encerrando décadas de coleta de dados."
+                }
+            ],
+            "funfact": "Alguns retrorefletores do ALSEP ainda são usados hoje para medir a distância Terra-Lua com lasers (informação aproximada, não verificada)."
+        },
+        {
+            "nome": "Surveyor Landers",
+            "missao": "Surveyor 3",
+            "mass": 300,
+            "status": "Pousado permanentemente na superfície lunar",
+            "link": "https://www.nasa.gov/surveyor",
+            "story": {
+                "info": "Sondas robóticas enviadas nos anos 1960 para testar e provar que pousos suaves na Lua eram possíveis antes das missões Apollo tripuladas.",
+                "importance": "Validou técnicas de pouso e forneceu imagens e dados do solo lunar que ajudaram a preparar as missões Apollo.",
+                "context": "Sete Surveyors foram lançados entre 1966 e 1968; cinco pousaram com sucesso e permaneceram na Lua após o fim das operações."
+            },
+            "timeline": [
+                {
+                    "data": "02/06/1966",
+                    "fact": "Surveyor 1 realiza o primeiro pouso suave americano na Lua."
+                },
+                {
+                    "data": "20/04/1967",
+                    "fact": "Surveyor 3 pousa e é visitado pela tripulação da Apollo 12 em 1969."
+                },
+                {
+                    "data": "10/01/1968",
+                    "fact": "Surveyor 7 pousa próximo à cratera Tycho, encerrando a série."
+                }
+            ],
+            "funfact": "O Surveyor 3 foi visitado pelos astronautas da Apollo 12, que trouxeram algumas de suas peças de volta à Terra para análise (dado ilustrativo)."
+        }
+    ]
+}
