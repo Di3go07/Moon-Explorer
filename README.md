@@ -9,7 +9,7 @@
 
 Since the 1960s, NASA has left hardware across the solar system — on the Moon, on Mars, and in deep space. From rovers and instruments that completed their scientific missions to probes still traveling away from Earth, this hardware varies widely in both its purpose and current level of functionality.
 
-The **Moon Explorer** project aims to tell the stories of these forgotten objects in other worlds, highlighting the remarkable legacy they have left on Earth.
+The Moon Explorer project aims to tell the stories of objects forgotten in other worlds, yet remembered on Earth for the remarkable legacy they left behind.
 
 Through a three-dimensional replica of the Moon and its artifacts, students and space exploration enthusiasts can discover forgotten equipment, learn about its missions, and understand the importance of its contributions to science.
 
