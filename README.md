@@ -95,5 +95,3 @@ Project developed by:
 <p align="center">
   <strong>Every footprint tells a story. Every machine leaves a legacy.</strong>
 </p>
-
-**NASA Space Apps Challenge 2026**
