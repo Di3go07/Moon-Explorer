@@ -11,9 +11,9 @@ Since the 1960s, NASA has left hardware across the solar system — on the Moon,
 
 The Moon Explorer project aims to tell the stories of objects forgotten in other worlds, yet remembered on Earth for the remarkable legacy they left behind.
 
-Through a three-dimensional replica of the Moon and its artifacts, students and space exploration enthusiasts can discover forgotten equipment, learn about its missions, and understand the importance of its contributions to science.
+Through a three-dimensional replica of the Moon and its artifacts, students and space exploration enthusiasts can discover forgotten equipment, learn about its missions, and understand the importance of its contributions to science. Dense scientific information and academic texts are transformed into an unforgettable journey through space and imagination. 
 
-Dense scientific information and academic texts are transformed into an unforgettable journey through space and imagination.
+Explore the Moon. Uncover its forgotten stories — [click here to begin!](https://moonexplor.netlify.app/)
 
 ## 🛰️ 3D Models
 
