@@ -1,112 +1,376 @@
 {
     "equipaments": [
         {
-            "nome": "Apollo Lunar Modules",
+            "nome": "Early Apollo 11 Experiments Package (EASEP)",
             "missao": "Apollo 11",
-            "mass": 2000,
-            "status": "Abandonado na superfície lunar",
-            "link": "https://www.nasa.gov/apollo11",
+            "mass": 48,
+            "status": "Operação encerrada em 27/08/1969",
+            "launchSite": "Cabo Canaveral, Flórida, EUA",
+            "launchVehicle": "Saturn V",
+            "local": "Mar da Tranquilidade",
+            "link": "./assets/apollo_11.glb",
             "story": {
-                "info": "O estágio de descida do Módulo Lunar Eagle foi a base que pousou os primeiros humanos na Lua em 20 de julho de 1969. Após a decolagem do estágio de ascensão, ele permaneceu na superfície.",
-                "importance": "Serviu como plataforma de lançamento improvisada para o estágio de ascensão retornar à órbita lunar, marcando o primeiro pouso tripulado na Lua.",
-                "context": "Durante a missão Apollo 11, Neil Armstrong e Buzz Aldrin pousaram no Mar da Tranquilidade, enquanto Michael Collins os aguardava em órbita."
+                "info": "Os astronautas deixaram na Lua a EASEP, um conjunto de instrumentos científicos para detectar abalos lunares e coletar partículas do Sol. Os experimentos permitiram estudar a Lua a partir da Terra.",
+                "objetivo": "Investigar o interior da Lua e medir a distância entre a Lua e a Terra.",
+                "importance": "Os cientistas detectaram abalos lunares, semelhantes aos terremotos da Terra.",
+                "context": "A EASEP permitiu instalar instrumentos científicos na superfície lunar para coletar dados e enviá-los à Terra."
             },
             "timeline": [
                 {
                     "data": "16/07/1969",
-                    "fact": "Lançamento da missão Apollo 11 do Cabo Canaveral."
+                    "fact": "Lançamento da Apollo 11 de Cabo Canaveral, a bordo de um Saturn V."
                 },
                 {
                     "data": "20/07/1969",
-                    "fact": "Pouso do Eagle no Mar da Tranquilidade e primeira caminhada lunar."
+                    "fact": "O módulo lunar Eagle pousou no Mar da Tranquilidade."
                 },
                 {
                     "data": "21/07/1969",
-                    "fact": "Decolagem do estágio de ascensão, deixando o estágio de descida para trás."
+                    "fact": "A EASEP foi instalada na superfície lunar."
                 }
             ],
-            "funfact": "O estágio de descida do Eagle permanece no Mar da Tranquilidade até hoje, servindo como um marco histórico (não verificado) da exploração humana."
+            "funfact": "Neil Armstrong foi a primeira pessoa a caminhar na Lua.",
+            "translations": {
+                "en": {
+                    "nome": "Early Apollo 11 Experiments Package (EASEP)",
+                    "missao": "Apollo 11",
+                    "status": "Operations ended on 27 Aug 1969",
+                    "launchSite": "Cape Canaveral, Florida, USA",
+                    "launchVehicle": "Saturn V",
+                    "local": "Sea of Tranquility",
+                    "story": {
+                        "info": "The astronauts left EASEP on the Moon, a set of scientific instruments designed to detect moonquakes and collect particles from the Sun. The experiments let scientists study the Moon from Earth.",
+                        "objetivo": "Study the Moon's interior and measure the distance between the Moon and Earth.",
+                        "importance": "Scientists detected moonquakes, similar to earthquakes on Earth.",
+                        "context": "EASEP placed scientific instruments on the lunar surface to collect data and transmit it to Earth."
+                    },
+                    "timeline": [
+                        {"data": "16/07/1969", "fact": "Apollo 11 launched from Cape Canaveral aboard a Saturn V."},
+                        {"data": "20/07/1969", "fact": "The lunar module Eagle landed in the Sea of Tranquility."},
+                        {"data": "21/07/1969", "fact": "EASEP was deployed on the lunar surface."}
+                    ],
+                    "funfact": "Neil Armstrong was the first person to walk on the Moon."
+                },
+                "es": {
+                    "nome": "Paquete de Experimentos del Apollo 11 (EASEP)",
+                    "missao": "Apollo 11",
+                    "status": "Operaciones finalizadas el 27/08/1969",
+                    "launchSite": "Cabo Cañaveral, Florida, EE. UU.",
+                    "launchVehicle": "Saturn V",
+                    "local": "Mar de la Tranquilidad",
+                    "story": {
+                        "info": "Los astronautas dejaron en la Luna la EASEP, un conjunto de instrumentos científicos diseñado para detectar sismos lunares y recoger partículas del Sol. Los experimentos permitieron estudiar la Luna desde la Tierra.",
+                        "objetivo": "Investigar el interior de la Luna y medir la distancia entre la Luna y la Tierra.",
+                        "importance": "Los científicos detectaron sismos lunares, similares a los terremotos terrestres.",
+                        "context": "La EASEP instaló instrumentos científicos en la superficie lunar para recoger datos y transmitirlos a la Tierra."
+                    },
+                    "timeline": [
+                        {"data": "16/07/1969", "fact": "El Apollo 11 despegó de Cabo Cañaveral a bordo de un Saturn V."},
+                        {"data": "20/07/1969", "fact": "El módulo lunar Eagle aterrizó en el Mar de la Tranquilidad."},
+                        {"data": "21/07/1969", "fact": "La EASEP se instaló en la superficie lunar."}
+                    ],
+                    "funfact": "Neil Armstrong fue la primera persona en caminar sobre la Luna."
+                },
+                "pt": {
+                    "nome": "Pacote de Experimentos da Apollo 11 (EASEP)",
+                    "missao": "Apollo 11",
+                    "status": "Operação encerrada em 27/08/1969",
+                    "launchSite": "Cabo Canaveral, Flórida, EUA",
+                    "launchVehicle": "Saturn V",
+                    "local": "Mar da Tranquilidade",
+                    "story": {
+                        "info": "Os astronautas deixaram na Lua a EASEP, um conjunto de instrumentos científicos para detectar abalos lunares e coletar partículas do Sol. Os experimentos permitiram estudar a Lua a partir da Terra.",
+                        "objetivo": "Investigar o interior da Lua e medir a distância entre a Lua e a Terra.",
+                        "importance": "Os cientistas detectaram abalos lunares, semelhantes aos terremotos da Terra.",
+                        "context": "A EASEP permitiu instalar instrumentos científicos na superfície lunar para coletar dados e enviá-los à Terra."
+                    },
+                    "timeline": [
+                        {"data": "16/07/1969", "fact": "Lançamento da Apollo 11 de Cabo Canaveral, a bordo de um Saturn V."},
+                        {"data": "20/07/1969", "fact": "O módulo lunar Eagle pousou no Mar da Tranquilidade."},
+                        {"data": "21/07/1969", "fact": "A EASEP foi instalada na superfície lunar."}
+                    ],
+                    "funfact": "Neil Armstrong foi a primeira pessoa a caminhar na Lua."
+                }
+            }
         },
         {
-            "nome": "Lunar Roving Vehicles (LRVs)",
-            "missao": "Apollo 12",
-            "mass": 210,
-            "status": "Estacionado permanentemente na Lua",
-            "link": "https://www.nasa.gov/lunar-roving-vehicle",
+            "nome": "Apollo 15 Lunar Surface Experiments Package (ALSEP)",
+            "missao": "Apollo 15",
+            "mass": 89.7,
+            "status": "Desativada em 30/09/1977",
+            "launchSite": "Cabo Canaveral, Flórida, EUA",
+            "launchVehicle": "Saturn V",
+            "local": "Região Hadley-Apennine",
+            "link": "./assets/lunar_roving.glb",
             "story": {
-                "info": "Três veículos elétricos foram usados nas últimas missões Apollo para permitir que os astronautas percorressem distâncias maiores na superfície lunar.",
-                "importance": "Ampliou enormemente o alcance científico das missões, permitindo coletar amostras em locais distantes do módulo lunar.",
-                "context": "Cada LRV foi projetado para operar em gravidade lunar e temperaturas extremas, sendo dobrado para caber no módulo lunar durante o transporte."
+                "info": "Os astronautas da Apollo 15 instalaram na Lua a ALSEP, uma estação científica que estudou abalos lunares, mediu o calor sob a superfície e investigou a poeira e o magnetismo lunar.",
+                "objetivo": "Investigar o solo lunar, o calor do interior da Lua e seu campo magnético.",
+                "importance": "Os instrumentos ajudaram os cientistas a compreender a atividade sísmica e térmica da Lua e sua interação com o ambiente.",
+                "context": "A ALSEP funcionava como uma estação científica, coletando informações sobre a Lua e transmitindo-as à Terra."
             },
             "timeline": [
+                {
+                    "data": "26/07/1971",
+                    "fact": "Lançamento da Apollo 15 de Cabo Canaveral, a bordo de um Saturn V."
+                },
                 {
                     "data": "30/07/1971",
-                    "fact": "Primeiro uso do LRV na Apollo 15, por David Scott e James Irwin."
+                    "fact": "O módulo lunar Falcon pousou na região Hadley-Apennine."
                 },
                 {
-                    "data": "21/04/1972",
-                    "fact": "LRV da Apollo 16 percorre mais de 26 km na região de Descartes."
-                },
-                {
-                    "data": "11/12/1972",
-                    "fact": "LRV da Apollo 17 é o último a ser estacionado na Lua, no Vale Taurus-Littrow."
+                    "data": "02/08/1971",
+                    "fact": "O estágio de ascensão decolou, deixando a ALSEP na superfície."
                 }
             ],
-            "funfact": "Os três 'moon buggies' foram deixados para trás e ainda estão na Lua — um deles tem até uma placa comemorativa (dados fictícios para fins ilustrativos)."
+            "funfact": "A Apollo 15 levou o primeiro carro à Lua; os astronautas percorreram cerca de 17,5 milhas (28 km).",
+            "translations": {
+                "en": {
+                    "nome": "Apollo 15 Lunar Surface Experiments Package (ALSEP)",
+                    "missao": "Apollo 15",
+                    "status": "Deactivated on 30 Sep 1977",
+                    "launchSite": "Cape Canaveral, Florida, USA",
+                    "launchVehicle": "Saturn V",
+                    "local": "Hadley-Apennine region",
+                    "story": {
+                        "info": "The Apollo 15 astronauts deployed ALSEP on the Moon, a scientific station that studied moonquakes, measured heat beneath the surface, and investigated lunar dust and magnetism.",
+                        "objetivo": "Investigate lunar soil, heat from the Moon's interior, and its magnetic field.",
+                        "importance": "The instruments helped scientists understand lunar seismic and thermal activity and how the Moon interacts with its environment.",
+                        "context": "ALSEP worked as a scientific station, collecting information about the Moon and transmitting it to Earth."
+                    },
+                    "timeline": [
+                        {"data": "26/07/1971", "fact": "Apollo 15 launched from Cape Canaveral aboard a Saturn V."},
+                        {"data": "30/07/1971", "fact": "The lunar module Falcon landed in the Hadley-Apennine region."},
+                        {"data": "02/08/1971", "fact": "The ascent stage lifted off, leaving ALSEP on the surface."}
+                    ],
+                    "funfact": "Apollo 15 carried the first car to the Moon; the astronauts drove about 17.5 miles (28 km)."
+                },
+                "es": {
+                    "nome": "Paquete de Experimentos de Superficie Lunar del Apollo 15 (ALSEP)",
+                    "missao": "Apollo 15",
+                    "status": "Desactivada el 30/09/1977",
+                    "launchSite": "Cabo Cañaveral, Florida, EE. UU.",
+                    "launchVehicle": "Saturn V",
+                    "local": "Región Hadley-Apennine",
+                    "story": {
+                        "info": "Los astronautas del Apollo 15 instalaron la ALSEP en la Luna, una estación científica que estudió los sismos lunares, midió el calor bajo la superficie e investigó el polvo y el magnetismo lunar.",
+                        "objetivo": "Investigar el suelo lunar, el calor del interior de la Luna y su campo magnético.",
+                        "importance": "Los instrumentos ayudaron a los científicos a comprender la actividad sísmica y térmica lunar y su interacción con el entorno.",
+                        "context": "La ALSEP funcionaba como una estación científica que recogía información sobre la Luna y la transmitía a la Tierra."
+                    },
+                    "timeline": [
+                        {"data": "26/07/1971", "fact": "El Apollo 15 despegó de Cabo Cañaveral a bordo de un Saturn V."},
+                        {"data": "30/07/1971", "fact": "El módulo lunar Falcon aterrizó en la región Hadley-Apennine."},
+                        {"data": "02/08/1971", "fact": "La etapa de ascenso despegó y dejó la ALSEP en la superficie."}
+                    ],
+                    "funfact": "El Apollo 15 llevó el primer vehículo a la Luna; los astronautas recorrieron unos 17,5 millas (28 km)."
+                },
+                "pt": {
+                    "nome": "Pacote de Experimentos da Superfície Lunar da Apollo 15 (ALSEP)",
+                    "missao": "Apollo 15",
+                    "status": "Desativada em 30/09/1977",
+                    "launchSite": "Cabo Canaveral, Flórida, EUA",
+                    "launchVehicle": "Saturn V",
+                    "local": "Região Hadley-Apennine",
+                    "story": {
+                        "info": "Os astronautas da Apollo 15 instalaram na Lua a ALSEP, uma estação científica que estudou abalos lunares, mediu o calor sob a superfície e investigou a poeira e o magnetismo lunar.",
+                        "objetivo": "Investigar o solo lunar, o calor do interior da Lua e seu campo magnético.",
+                        "importance": "Os instrumentos ajudaram os cientistas a compreender a atividade sísmica e térmica da Lua e sua interação com o ambiente.",
+                        "context": "A ALSEP funcionava como uma estação científica, coletando informações sobre a Lua e transmitindo-as à Terra."
+                    },
+                    "timeline": [
+                        {"data": "26/07/1971", "fact": "Lançamento da Apollo 15 de Cabo Canaveral, a bordo de um Saturn V."},
+                        {"data": "30/07/1971", "fact": "O módulo lunar Falcon pousou na região Hadley-Apennine."},
+                        {"data": "02/08/1971", "fact": "O estágio de ascensão decolou, deixando a ALSEP na superfície."}
+                    ],
+                    "funfact": "A Apollo 15 levou o primeiro carro à Lua; os astronautas percorreram cerca de 17,5 milhas (28 km)."
+                }
+            }
         },
         {
-            "nome": "ALSEP Scientific Packages",
-            "missao": "Apollo 16",
-            "mass": 75,
-            "status": "Operacional por décadas após o fim das missões",
-            "link": "https://www.nasa.gov/alsep",
+            "nome": "Apollo 12 Lunar Surface Experiments Package (ALSEP)",
+            "missao": "Apollo 12",
+            "mass": 113.4,
+            "status": "Desativada em 30/09/1977",
+            "launchSite": "Cabo Canaveral, Flórida, EUA",
+            "launchVehicle": "Saturn V",
+            "local": "Oceanus Procellarum",
+            "link": "./assets/lunar_lender.glb",
             "story": {
-                "info": "Conjunto de experimentos científicos deixados na superfície lunar para coletar dados sobre sismologia, atmosfera, magnetismo e composição do solo.",
-                "importance": "Forneceu dados valiosos por anos, incluindo registros de terremotos lunares e medições de partículas solares.",
-                "context": "Cada pacote era alimentado por geradores termoelétricos radioisotópicos (RTGs) e transmitia dados para a Terra."
+                "info": "Os astronautas da Apollo 12 instalaram a ALSEP, um conjunto de instrumentos para estudar a poeira lunar e coletar partículas do Sol. Também trouxeram partes da Surveyor 3 para análise na Terra.",
+                "objetivo": "Estudar o solo lunar, o ambiente ao redor e as partículas provenientes do Sol.",
+                "importance": "As observações ajudaram os cientistas a aprender mais sobre a poeira lunar e a influência das partículas solares sobre a Lua.",
+                "context": "A ALSEP permitiu estudar a Lua com instrumentos científicos deixados pelos astronautas na superfície."
             },
             "timeline": [
+                {
+                    "data": "14/11/1969",
+                    "fact": "Lançamento da Apollo 12 de Cabo Canaveral, a bordo de um Saturn V."
+                },
                 {
                     "data": "19/11/1969",
-                    "fact": "ALSEP da Apollo 12 é o primeiro a ser instalado e operar na Lua."
+                    "fact": "O módulo lunar Intrepid pousou em Oceanus Procellarum e a ALSEP foi instalada."
                 },
                 {
-                    "data": "31/07/1971",
-                    "fact": "ALSEP da Apollo 15 é instalado e começa a transmitir dados sísmicos."
-                },
-                {
-                    "data": "30/09/1977",
-                    "fact": "Último ALSEP é desligado por falta de energia, encerrando décadas de coleta de dados."
+                    "data": "20/11/1969",
+                    "fact": "O módulo lunar decolou, deixando a ALSEP na superfície."
                 }
             ],
-            "funfact": "Alguns retrorefletores do ALSEP ainda são usados hoje para medir a distância Terra-Lua com lasers (informação aproximada, não verificada)."
+            "funfact": "Os astronautas da Apollo 12 tiraram mais de 2.000 fotografias durante a missão.",
+            "translations": {
+                "en": {
+                    "nome": "Apollo 12 Lunar Surface Experiments Package (ALSEP)",
+                    "missao": "Apollo 12",
+                    "status": "Deactivated on 30 Sep 1977",
+                    "launchSite": "Cape Canaveral, Florida, USA",
+                    "launchVehicle": "Saturn V",
+                    "local": "Oceanus Procellarum",
+                    "story": {
+                        "info": "The Apollo 12 astronauts deployed ALSEP, a set of instruments to study lunar dust and collect particles from the Sun. They also brought back parts of Surveyor 3 for analysis on Earth.",
+                        "objetivo": "Study lunar soil, the surrounding environment, and particles from the Sun.",
+                        "importance": "The observations helped scientists learn more about lunar dust and the Sun's influence on the Moon.",
+                        "context": "ALSEP made it possible to study the Moon using scientific instruments left on its surface by astronauts."
+                    },
+                    "timeline": [
+                        {"data": "14/11/1969", "fact": "Apollo 12 launched from Cape Canaveral aboard a Saturn V."},
+                        {"data": "19/11/1969", "fact": "The lunar module Intrepid landed in Oceanus Procellarum and ALSEP was deployed."},
+                        {"data": "20/11/1969", "fact": "The lunar module lifted off, leaving ALSEP on the surface."}
+                    ],
+                    "funfact": "The Apollo 12 astronauts took more than 2,000 photographs during the mission."
+                },
+                "es": {
+                    "nome": "Paquete de Experimentos de Superficie Lunar del Apollo 12 (ALSEP)",
+                    "missao": "Apollo 12",
+                    "status": "Desactivada el 30/09/1977",
+                    "launchSite": "Cabo Cañaveral, Florida, EE. UU.",
+                    "launchVehicle": "Saturn V",
+                    "local": "Oceanus Procellarum",
+                    "story": {
+                        "info": "Los astronautas del Apollo 12 instalaron la ALSEP, un conjunto de instrumentos para estudiar el polvo lunar y recoger partículas del Sol. También trajeron partes de la Surveyor 3 para analizarlas en la Tierra.",
+                        "objetivo": "Estudiar el suelo lunar, el entorno y las partículas procedentes del Sol.",
+                        "importance": "Las observaciones ayudaron a los científicos a conocer mejor el polvo lunar y la influencia del Sol en la Luna.",
+                        "context": "La ALSEP permitió estudiar la Luna mediante instrumentos científicos que los astronautas dejaron en su superficie."
+                    },
+                    "timeline": [
+                        {"data": "14/11/1969", "fact": "El Apollo 12 despegó de Cabo Cañaveral a bordo de un Saturn V."},
+                        {"data": "19/11/1969", "fact": "El módulo lunar Intrepid aterrizó en Oceanus Procellarum y se instaló la ALSEP."},
+                        {"data": "20/11/1969", "fact": "El módulo lunar despegó y dejó la ALSEP en la superficie."}
+                    ],
+                    "funfact": "Los astronautas del Apollo 12 tomaron más de 2.000 fotografías durante la misión."
+                },
+                "pt": {
+                    "nome": "Pacote de Experimentos da Superfície Lunar da Apollo 12 (ALSEP)",
+                    "missao": "Apollo 12",
+                    "status": "Desativada em 30/09/1977",
+                    "launchSite": "Cabo Canaveral, Flórida, EUA",
+                    "launchVehicle": "Saturn V",
+                    "local": "Oceanus Procellarum",
+                    "story": {
+                        "info": "Os astronautas da Apollo 12 instalaram a ALSEP, um conjunto de instrumentos para estudar a poeira lunar e coletar partículas do Sol. Também trouxeram partes da Surveyor 3 para análise na Terra.",
+                        "objetivo": "Estudar o solo lunar, o ambiente ao redor e as partículas provenientes do Sol.",
+                        "importance": "As observações ajudaram os cientistas a aprender mais sobre a poeira lunar e a influência das partículas solares sobre a Lua.",
+                        "context": "A ALSEP permitiu estudar a Lua com instrumentos científicos deixados pelos astronautas na superfície."
+                    },
+                    "timeline": [
+                        {"data": "14/11/1969", "fact": "Lançamento da Apollo 12 de Cabo Canaveral, a bordo de um Saturn V."},
+                        {"data": "19/11/1969", "fact": "O módulo lunar Intrepid pousou em Oceanus Procellarum e a ALSEP foi instalada."},
+                        {"data": "20/11/1969", "fact": "O módulo lunar decolou, deixando a ALSEP na superfície."}
+                    ],
+                    "funfact": "Os astronautas da Apollo 12 tiraram mais de 2.000 fotografias durante a missão."
+                }
+            }
         },
         {
-            "nome": "Surveyor Landers",
+            "nome": "Surveyor 3",
             "missao": "Surveyor 3",
-            "mass": 300,
-            "status": "Pousado permanentemente na superfície lunar",
-            "link": "https://www.nasa.gov/surveyor",
+            "mass": 997.9,
+            "status": "Último contato em 04/05/1967",
+            "launchSite": "Cabo Canaveral, Flórida, LC-36B",
+            "launchVehicle": "Atlas-Centaur AC-12",
+            "local": "Cratera Surveyor, Oceanus Procellarum",
+            "link": "./assets/surveyor_lanch.glb",
             "story": {
-                "info": "Sondas robóticas enviadas nos anos 1960 para testar e provar que pousos suaves na Lua eram possíveis antes das missões Apollo tripuladas.",
-                "importance": "Validou técnicas de pouso e forneceu imagens e dados do solo lunar que ajudaram a preparar as missões Apollo.",
-                "context": "Sete Surveyors foram lançados entre 1966 e 1968; cinco pousaram com sucesso e permaneceram na Lua após o fim das operações."
+                "info": "A Surveyor 3 foi uma sonda robótica que fotografou a Lua e usou uma pá para escavar o solo. Suas descobertas ajudaram a preparar as missões tripuladas Apollo.",
+                "objetivo": "Estudar a superfície lunar e determinar as propriedades do solo.",
+                "importance": "Os testes mostraram que o solo lunar podia sustentar o peso de um módulo lunar Apollo.",
+                "context": "A Surveyor 3 foi uma das primeiras sondas da NASA a explorar a Lua antes da chegada dos astronautas."
             },
             "timeline": [
                 {
-                    "data": "02/06/1966",
-                    "fact": "Surveyor 1 realiza o primeiro pouso suave americano na Lua."
+                    "data": "17/04/1967",
+                    "fact": "Lançamento da Surveyor 3 de Cabo Canaveral, a bordo de um Atlas-Centaur."
                 },
                 {
                     "data": "20/04/1967",
-                    "fact": "Surveyor 3 pousa e é visitado pela tripulação da Apollo 12 em 1969."
+                    "fact": "Após dois ressaltos, a Surveyor 3 pousou em Oceanus Procellarum."
                 },
                 {
-                    "data": "10/01/1968",
-                    "fact": "Surveyor 7 pousa próximo à cratera Tycho, encerrando a série."
+                    "data": "04/05/1967",
+                    "fact": "A NASA recebeu o último contato da Surveyor 3."
                 }
             ],
-            "funfact": "O Surveyor 3 foi visitado pelos astronautas da Apollo 12, que trouxeram algumas de suas peças de volta à Terra para análise (dado ilustrativo)."
+            "funfact": "Antes de pousar em segurança, a Surveyor 3 ressaltou duas vezes na superfície lunar.",
+            "translations": {
+                "en": {
+                    "nome": "Surveyor 3",
+                    "missao": "Surveyor 3",
+                    "status": "Last contact on 4 May 1967",
+                    "launchSite": "Cape Canaveral, Florida, LC-36B",
+                    "launchVehicle": "Atlas-Centaur AC-12",
+                    "local": "Surveyor Crater, Oceanus Procellarum",
+                    "story": {
+                        "info": "Surveyor 3 was a robotic probe that photographed the Moon and used a scoop to dig into the soil. Its discoveries helped prepare for crewed Apollo missions.",
+                        "objetivo": "Study the lunar surface and determine the properties of its soil.",
+                        "importance": "Tests showed that lunar soil could support the weight of an Apollo lunar module.",
+                        "context": "Surveyor 3 was one of NASA's early robotic explorers of the Moon, sent ahead of the astronauts."
+                    },
+                    "timeline": [
+                        {"data": "17/04/1967", "fact": "Surveyor 3 launched from Cape Canaveral aboard an Atlas-Centaur."},
+                        {"data": "20/04/1967", "fact": "After bouncing twice, Surveyor 3 landed in Oceanus Procellarum."},
+                        {"data": "04/05/1967", "fact": "NASA received Surveyor 3's last signal."}
+                    ],
+                    "funfact": "Surveyor 3 bounced twice on the lunar surface before settling safely."
+                },
+                "es": {
+                    "nome": "Surveyor 3",
+                    "missao": "Surveyor 3",
+                    "status": "Último contacto el 04/05/1967",
+                    "launchSite": "Cabo Cañaveral, Florida, LC-36B",
+                    "launchVehicle": "Atlas-Centaur AC-12",
+                    "local": "Cráter Surveyor, Oceanus Procellarum",
+                    "story": {
+                        "info": "La Surveyor 3 fue una sonda robótica que fotografió la Luna y utilizó una pala para excavar el suelo. Sus descubrimientos ayudaron a preparar las misiones tripuladas Apollo.",
+                        "objetivo": "Estudiar la superficie lunar y determinar las propiedades del suelo.",
+                        "importance": "Las pruebas mostraron que el suelo lunar podía soportar el peso de un módulo lunar Apollo.",
+                        "context": "La Surveyor 3 fue una de las primeras sondas de la NASA en explorar la Luna antes de la llegada de los astronautas."
+                    },
+                    "timeline": [
+                        {"data": "17/04/1967", "fact": "La Surveyor 3 despegó de Cabo Cañaveral a bordo de un Atlas-Centaur."},
+                        {"data": "20/04/1967", "fact": "Tras rebotar dos veces, la Surveyor 3 aterrizó en Oceanus Procellarum."},
+                        {"data": "04/05/1967", "fact": "La NASA recibió la última señal de la Surveyor 3."}
+                    ],
+                    "funfact": "La Surveyor 3 rebotó dos veces en la superficie lunar antes de aterrizar de forma segura."
+                },
+                "pt": {
+                    "nome": "Surveyor 3",
+                    "missao": "Surveyor 3",
+                    "status": "Último contato em 04/05/1967",
+                    "launchSite": "Cabo Canaveral, Flórida, LC-36B",
+                    "launchVehicle": "Atlas-Centaur AC-12",
+                    "local": "Cratera Surveyor, Oceanus Procellarum",
+                    "story": {
+                        "info": "A Surveyor 3 foi uma sonda robótica que fotografou a Lua e usou uma pá para escavar o solo. Suas descobertas ajudaram a preparar as missões tripuladas Apollo.",
+                        "objetivo": "Estudar a superfície lunar e determinar as propriedades do solo.",
+                        "importance": "Os testes mostraram que o solo lunar podia sustentar o peso de um módulo lunar Apollo.",
+                        "context": "A Surveyor 3 foi uma das primeiras sondas da NASA a explorar a Lua antes da chegada dos astronautas."
+                    },
+                    "timeline": [
+                        {"data": "17/04/1967", "fact": "Lançamento da Surveyor 3 de Cabo Canaveral, a bordo de um Atlas-Centaur."},
+                        {"data": "20/04/1967", "fact": "Após dois ressaltos, a Surveyor 3 pousou em Oceanus Procellarum."},
+                        {"data": "04/05/1967", "fact": "A NASA recebeu o último contato da Surveyor 3."}
+                    ],
+                    "funfact": "Antes de pousar em segurança, a Surveyor 3 ressaltou duas vezes na superfície lunar."
+                }
+            }
         }
     ]
 }

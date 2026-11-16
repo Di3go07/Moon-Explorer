@@ -292,7 +292,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--margin-sm) var(--margin-xl);
+  padding: 10px var(--margin-xl);
   background: rgba(33, 15, 21, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -302,24 +302,14 @@ h3 {
 .logo {
   display: flex;
   align-items: center;
-  gap: 14px;
   text-decoration: none;
 }
 
 .logo img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  border-radius: 50%;
-  box-shadow: 0 0 18px rgba(203, 119, 144, 0.4);
-}
-
-.logo p {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.25em;
-  letter-spacing: 0.06em;
-  color: var(--color-text-primary);
+  width: 144px;
+  height: 72px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .menu {
@@ -357,6 +347,31 @@ h3 {
 
 .menu a:hover::after {
   width: 100%;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-secondary);
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.language-switcher select {
+  min-width: 116px;
+  padding: 8px 28px 8px 10px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  color: var(--color-text-primary);
+  background: rgba(33, 15, 21, 0.9);
+  font: inherit;
+  cursor: pointer;
+}
+
+.language-switcher option {
+  color: var(--color-text-primary);
+  background: var(--color-bg-darkest);
 }
 
 .hamburger {
@@ -448,5 +463,40 @@ h3 {
   font-size: 1.25em;
   color: var(--color-text-secondary);
   text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .menu,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    width: 112px;
+    height: 56px;
+  }
+
+  .menu,
+  .nav-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
 

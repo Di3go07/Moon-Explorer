@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitle">Moon Explorer — Interactive Space Exploration Museum</title>
+
+    <!-- Google Fonts: Fredoka & Nunito -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="home.css" />
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Fundo estrelado atmosférico -->
+    <div class="starfield" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <a href="#home" class="logo">
+        <img src="./assets/moon-explorer-logo.png" alt="Moon Explorer" data-i18n-alt="brandAlt" />
+      </a>
+
+      <nav class="menu">
+        <a href="#home" data-i18n="homeNav">Home</a>
+        <a href="explore.html#explorer" data-i18n="exploreNav">Explore</a>
+        <a href="#about" data-i18n="aboutNav">About</a>
+      </nav>
+
+      <label class="language-switcher">
+        <span data-i18n="languageLabel">Language</span>
+        <select id="language-select" aria-label="Select language" data-i18n-aria-label="languageLabel">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="pt">Português</option>
+        </select>
+      </label>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        data-i18n-aria-label="openMenu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Overlay do menu lateral -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- Menu lateral mobile -->
+    <aside class="side-menu" id="side-menu" aria-hidden="true">
+      <div class="side-menu-header">
+        <p>MOON EXPLORER</p>
+        <button class="close-menu" id="close-menu" aria-label="Close menu" data-i18n-aria-label="closeMenu">
+          &times;
+        </button>
+      </div>
+      <nav class="side-menu-links">
+        <a href="#home" data-i18n="homeNav">Home</a>
+        <a href="explore.html#explorer" data-i18n="exploreNav">Explore</a>
+        <a href="#about" data-i18n="aboutNav">About</a>
+      </nav>
+      <a href="explore.html#explorer" class="btn btn-primary side-menu-cta"
+        data-i18n="exploreMoon"
+        >EXPLORE THE MOON</a
+      >
+    </aside>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <article class="hero-content">
+        <p class="chapter"><span class="dot"></span><span data-i18n="heroChapter">AN INTERACTIVE LUNAR ARCHIVE</span></p>
+        <h1 data-i18n="heroTitle">THE MOON REMEMBERS.</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          Every mission leaves something behind. Discover the forgotten machines
+          that helped humanity reach for the stars.
+        </p>
+        <div class="hero-actions">
+          <a href="explore.html#explorer" class="btn btn-primary" data-i18n="startExploring">START EXPLORING</a>
+           <a href="#discoveries" class="btn btn-secondary" data-i18n="discoverStories">DISCOVER THEIR STORIES</a>
+        </div>
+      </article>
+
+      <div class="moon-display">
+        <div class="moon-orbit" aria-hidden="true"></div>
+        <div class="moon-glow" aria-hidden="true"></div>
+        <model-viewer
+          src="./assets/moon_new.glb"
+          alt="3D Model of the Moon"
+          reveal="auto"
+          auto-rotate
+          rotation-per-second="8deg"
+          shadow-intensity="0"
+          exposure="1"
+          orientation="45deg -180deg 0deg"
+        >
+        </model-viewer>
+      </div>
+    </section>
+
+    <!-- ABOUT / INTRODUCTION -->
+    <section class="about" id="about">
+      <p class="chapter" data-i18n="archiveChapter">THE LUNAR ARCHIVE · 01</p>
+      <article class="section-header">
+        <div class="left-text">
+          <h2><span data-i18n="aboutHeadingStart">NOT EVERY EXPLORER</span> <span id="highlighted" data-i18n="aboutHeadingEnd">CAME HOME.</span></h2>
+        </div>
+        <div class="right-text">
+          <p data-i18n="aboutText">
+            Long after astronauts returned to Earth, their machines remained.
+            Landers, scientific instruments, and forgotten equipment still rest
+            on distant worlds.
+          </p>
+          <p data-i18n="aboutStory">Each one has a story worth telling.</p>
+        </div>
+      </article>
+
+      <div class="texts-section">
+        <div class="stat-card">
+          <p class="stat-number">50+</p>
+          <h3 class="stat-label" data-i18n="yearsExploration">Years of Exploration</h3>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">04</p>
+          <h3 class="stat-label" data-i18n="forgottenArtifacts">Forgotten Artifacts</h3>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">01</p>
+          <h3 class="stat-label" data-i18n="discoveryStory">Incredible Story of Discovery</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED DISCOVERIES (CARDS) -->
+    <section class="card-section" id="discoveries">
+      <p class="chapter" data-i18n="objectsChapter">OBJECTS IN THE SILENCE · 02</p>
+      <article class="section-header">
+        <div class="left-text">
+          <h2><span data-i18n="fallenHeadingStart">FALLEN</span> <span id="highlighted" data-i18n="fallenHeadingEnd">MACHINES</span></h2>
+        </div>
+        <div class="right-text">
+          <p data-i18n="machinesIntro">
+            Four machines. One legacy. They may be forgotten on distant worlds, but...
+          </p>
+          <p data-i18n="machinesOutro">
+            their stories will never be lost.
+          </p>
+        </div>
+      </article>
+
+      <div class="cards-container">
+        <!-- Card 01 -->
+        <div class="card">
+          <p class="number">01</p>
+          <div class="model-wrapper">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Buzz_Aldrin_and_Apollo_11_Lunar_Lander%2C_AS11-40-5927.jpg/1280px-Buzz_Aldrin_and_Apollo_11_Lunar_Lander%2C_AS11-40-5927.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail" alt="Apollo 11 lunar lander" data-i18n-alt="apollo11ImageAlt">
+          </div>
+          <div class="text">
+            <h3>Apollo 11</h3>
+            <p class="subtitle" data-i18n="apollo11Subtitle">Lunar Module / EASEP</p>
+            <p class="info" data-i18n="apollo11Location">1969 · SEA OF TRANQUILITY</p>
+            <p class="description" data-i18n="apollo11Description">
+              The first footprints faded, but the machines stayed. A small
+              scientific station kept watch after the astronauts began their
+              journey home.
+            </p>
+            <a href="explore.html#explorer" class="btn btn-card" data-i18n="discoverStory">Discover Story</a>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="card">
+          <p class="number">02</p>
+          <div class="model-wrapper">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnpr.brightspotcdn.com%2Fdims4%2Fdefault%2F1ee43ec%2F2147483647%2Fstrip%2Ftrue%2Fcrop%2F2984x2493%2B0%2B0%2Fresize%2F1760x1470!%2Fquality%2F90%2F%3Furl%3Dhttp%3A%252F%252Fnpr-brightspot.s3.amazonaws.com%252Fd3%252F62%252F1ff1739947ed9a4c376778f3eb30%252Flunarrovingvehicle-2.jpg&f=1&nofb=1&ipt=97bcf1e635bf8d8447e0a0640ae78b868fc6aa52f640d9d4e2c4232c4cde752a&ipo=images" alt="Apollo 15 lunar rover" data-i18n-alt="apollo15ImageAlt">
+          </div>
+          <div class="text">
+            <h3>Apollo 15</h3>
+            <p class="subtitle" data-i18n="apollo15Subtitle">Lunar Module / ALSEP</p>
+            <p class="info" data-i18n="apollo15Location">1971 · HADLEY-APENNINE</p>
+            <p class="description" data-i18n="apollo15Description">
+              At the foot of lunar mountains, another explorer was left behind.
+              Its instruments peered below the dust and listened for the Moon's
+              hidden rhythms.
+            </p>
+            <a href="explore.html#explorer" class="btn btn-card" data-i18n="discoverStory">Discover Story</a>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="card">
+          <p class="number">03</p>
+          <div class="model-wrapper">
+            <img src="https://astronautix.com/graphics/1/10075406.jpg" alt="Apollo 12 lunar equipment" data-i18n-alt="apollo12ImageAlt">
+          </div>
+          <div class="text">
+            <h3>Apollo 12</h3>
+            <p class="subtitle" data-i18n="apollo12Subtitle">Lunar Module / ALSEP</p>
+            <p class="info" data-i18n="apollo12Location">1969 · OCEAN OF STORMS</p>
+            <p class="description" data-i18n="apollo12Description">
+              Humanity returned with a new mission: land with precision, explore
+              farther, and uncover more secrets beneath the gray lunar soil.
+            </p>
+            <a href="explore.html#explorer" class="btn btn-card" data-i18n="discoverStory">Discover Story</a>
+          </div>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="card">
+          <p class="number">04</p>
+          <div class="model-wrapper">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Lunar_Lander%2C_Surveyor_-_DPLA_-_d6accc3d89e8efa6f2e88962941bf43a_%28page_6%29.jpg/250px-Lunar_Lander%2C_Surveyor_-_DPLA_-_d6accc3d89e8efa6f2e88962941bf43a_%28page_6%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" alt="Surveyor lunar lander" data-i18n-alt="surveyorImageAlt">
+          </div>
+          <div class="text">
+            <h3>Surveyor 3</h3>
+            <p class="subtitle" data-i18n="surveyorSubtitle">Robotic Lunar Lander</p>
+            <p class="info" data-i18n="surveyorLocation">1967 · OCEAN OF STORMS</p>
+            <p class="description" data-i18n="surveyorDescription">
+              Before astronauts walked nearby, a three-legged robotic explorer
+              had already touched the dust and tested the ground for those who
+              would follow.
+            </p>
+            <a href="explore.html#explorer" class="btn btn-card" data-i18n="discoverStory">Discover Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="final-banner" id="explore">
+      <div class="banner-box">
+        <p class="chapter" data-i18n="missionAwaits">YOUR MISSION AWAITS</p>
+        <h2><span data-i18n="nextDiscoveryStart">THE NEXT DISCOVERY</span> <span id="highlighted" data-i18n="nextDiscoveryEnd">IS YOURS.</span></h2>
+        <p class="banner-text" data-i18n="bannerText">
+          Travel across the Moon and join the journey of the machines that made history.
+        </p>
+        <a href="explore.html#explorer" class="btn btn-primary btn-large"
+            data-i18n="exploreMoon"
+          >EXPLORE THE MOON</a
+        >
+      </div>
+    </section>
+
+    <script src="scripts/i18n.js" defer></script>
+    <script src="scripts/menu.js" defer></script>
+  </body>
+</html>

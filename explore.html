@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Moon Explorer — Interactive Space Exploration Museum</title>
+        <title data-i18n="pageTitle">Moon Explorer — Interactive Space Exploration Museum</title>
 
         <!-- Google Fonts: Fredoka & Nunito -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,26 +27,31 @@
 
         <!-- NAVBAR -->
         <header class="navbar">
-        <a href="#home" class="logo">
-            <img src="./assets/logo.png" alt="Moon Explorer Logo" />
-            <p>MOON EXPLORER</p>
+        <a href="index.html#home" class="logo">
+            <img src="./assets/moon-explorer-logo.png" alt="Moon Explorer" data-i18n-alt="brandAlt" />
         </a>
 
-        <nav class="menu">
-            <a href="#home">Home</a>
-            <a href="#explore">Explore</a>
-            <a href="#about">About</a>
+        <nav class="menu" aria-label="Main navigation">
+            <a href="index.html#home" data-i18n="homeNav">Home</a>
+            <a href="#explorer" data-i18n="exploreNav">Explore</a>
+            <a href="index.html#about" data-i18n="aboutNav">About</a>
         </nav>
 
-        <div class="nav-cta">
-            <a href="#explore" class="btn btn-primary">EXPLORE THE MOON</a>
-        </div>
+        <label class="language-switcher">
+            <span data-i18n="languageLabel">Language</span>
+            <select id="language-select" aria-label="Select language" data-i18n-aria-label="languageLabel">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="pt">Português</option>
+            </select>
+        </label>
 
         <!-- Hamburger (mobile) -->
         <button
             class="hamburger"
             id="hamburger"
             aria-label="Open menu"
+            data-i18n-aria-label="openMenu"
             aria-expanded="false"
         >
             <span></span><span></span><span></span>
@@ -57,105 +62,123 @@
         <div class="menu-overlay" id="menu-overlay"></div>
 
         <!-- Menu lateral mobile -->
-        <aside class="side-menu" id="side-menu" aria-hidden="true">
+        <aside class="side-menu" id="side-menu" aria-hidden="true" inert>
         <div class="side-menu-header">
             <p>MOON EXPLORER</p>
-            <button class="close-menu" id="close-menu" aria-label="Close menu">
+            <button class="close-menu" id="close-menu" aria-label="Close menu" data-i18n-aria-label="closeMenu">
             &times;
             </button>
         </div>
-        <nav class="side-menu-links">
-            <a href="#home">Home</a>
-            <a href="#explore">Explore</a>
-            <a href="#about">About</a>
+        <nav class="side-menu-links" aria-label="Mobile navigation">
+            <a href="index.html#home" data-i18n="homeNav">Home</a>
+            <a href="#explorer" data-i18n="exploreNav">Explore</a>
+            <a href="index.html#about" data-i18n="aboutNav">About</a>
         </nav>
-        <a href="#explore" class="btn btn-primary side-menu-cta"
+        <a href="#explorer" class="btn btn-primary side-menu-cta"
+            data-i18n="exploreMoon"
             >EXPLORE THE MOON</a
         >
         </aside>
 
-        <main class="explorer initial-state" id="explorer">
+        <main class="explorer initial-state" id="explorer" aria-label="Lunar equipment explorer">
 
     <!-- PAINEL DA LUA -->
-    <section class="moon-panel">
-        <div class="panel-label">MOON EXPLORER</div>
+    <section class="moon-panel" aria-labelledby="moon-panel-heading">
+        <div class="panel-label" id="moon-panel-heading" data-i18n="moonExplorerLabel">MOON EXPLORER</div>
 
         <div class="moon-container">
+            <div class="moon-loading" id="moon-loading" role="status" aria-live="polite">
+                <span class="moon-loading-spinner" aria-hidden="true"></span>
+                <span class="moon-loading-text" data-i18n="loadingMoon">LOADING MOON MODEL...</span>
+            </div>
             <model-viewer
-                src="./assets/Moon_New.glb"
+                id="moon-model"
+                src="./assets/moon_new.glb"
                 alt="3D Model of the Moon"
+                data-i18n-alt="moonModelAlt"
                 camera-controls
                 disable-pan
                 disable-zoom
                 shadow-intensity="0"
                 exposure="1"
-            ></model-viewer>
-
-            <!-- REGIÕES CLICÁVEIS -->
-            <button
-                class="moon-region"
-                data-object="0"
-                style="--x: 35%; --y: 35%;"
-                aria-label="Selecionar equipamento 1"
-            ></button>
-
-            <button
-                class="moon-region"
-                data-object="1"
-                style="--x: 65%; --y: 40%;"
-                aria-label="Selecionar equipamento 2"
-            ></button>
-
-            <button
-                class="moon-region"
-                data-object="2"
-                style="--x: 45%; --y: 65%;"
-                aria-label="Selecionar equipamento 3"
-            ></button>
-
-            <button
-                class="moon-region"
-                data-object="3"
-                style="--x: 70%; --y: 70%;"
-                aria-label="Selecionar equipamento 4"
-            ></button>
+            >
+                <button
+                    slot="hotspot-equipment-0"
+                    class="moon-region"
+                    data-object="0"
+                    data-position="0m 2.76m 0m"
+                    data-normal="-0.333 0.333 0.882"
+                    tabindex="0"
+                    aria-label="Select Apollo 11 EASEP"
+                ></button>
+                <button
+                    slot="hotspot-equipment-1"
+                    class="moon-region"
+                    data-object="1"
+                    data-position="-0.7m 0.7m -2.6m"
+                    data-normal="0.333 0.222 0.916"
+                    data-orientation="0deg 90deg 180deg"
+                    tabindex="0"
+                    aria-label="Select Apollo 15 ALSEP"
+                ></button>
+                <button
+                    slot="hotspot-equipment-2"
+                    class="moon-region"
+                    data-object="2"
+                    data-position="0.2m -1.9m 1.6m"
+                    data-normal="-0.111 -0.333 0.936"
+                    tabindex="0"
+                    aria-label="Select Apollo 12 ALSEP"
+                ></button>
+                <button
+                    slot="hotspot-equipment-3"
+                    class="moon-region"
+                    data-object="3"
+                    data-position="-2.1m 0.5m 1.5m"
+                    data-normal="0.444 -0.444 0.778"
+                    tabindex="0"
+                    aria-label="Select Surveyor 3"
+                ></button>
+            </model-viewer>
         </div>
 
         <p class="moon-instruction" id="moon-instruction">
-            SELECT A LOCATION ON THE MOON
+            <span data-i18n="selectLocation">SELECT A LOCATION ON THE MOON</span>
         </p>
     </section>
 
 
     <!-- PAINEL DO EQUIPAMENTO -->
-    <section class="object-panel hidden" id="object-panel">
+    <section class="object-panel hidden" id="object-panel" aria-labelledby="object-panel-heading">
 
-        <div class="panel-label">MISSION ARTIFACT</div>
+        <div class="panel-label" id="object-panel-heading" data-i18n="missionArtifact">MISSION ARTIFACT</div>
 
         <div class="object-viewer">
             <model-viewer
                 id="artifact-model"
                 src=""
                 alt="3D Model of the selected equipment"
+                data-i18n-alt="artifactModelAlt"
                 camera-controls
                 disable-pan
                 auto-rotate
+                disable-zoom
                 rotation-per-second="8deg"
                 shadow-intensity="0"
                 exposure="1"
             ></model-viewer>
 
-            <div class="object-loading" id="object-loading">
+            <div class="object-loading" id="object-loading" data-i18n="loadingModel">
                 LOADING MODEL...
             </div>
         </div>
 
         <div class="object-info">
 
-            <h1 id="object-name">Equipment name</h1>
+            <h1 id="object-name" data-i18n="equipmentName">Equipment name</h1>
 
             <p class="object-mission" id="object-mission">
-                Mission name
+                <span data-i18n="missionName">Mission name</span>
             </p>
 
         </div>
@@ -165,43 +188,61 @@
     <!-- DASHBOARD -->
     <section class="details-panel hidden" id="details-panel">
 
-        <div class="panel-label">MISSION DASHBOARD</div>
+        <div class="panel-label" data-i18n="missionDashboard">MISSION DASHBOARD</div>
 
         <!-- DETALHES DA MISSÃO -->
-        <article class="dashboard-card mission-card">
+        <article class="dashboard-card mission-card" aria-labelledby="details-heading">
+            <h2 id="details-heading" data-i18n="detailsHeading">01 / DETAILS</h2>
             <dl class="mission-summary">
                 <div>
-                    <dt>Mission</dt>
+                    <dt data-i18n="missionLabel">Mission</dt>
                     <dd id="details-mission">--</dd>
                 </div>
                 <div>
-                    <dt>Equipment mass</dt>
+                    <dt data-i18n="massLabel">Equipment mass</dt>
                     <dd id="details-mass">--</dd>
                 </div>
-                <div>
-                    <dt>Current status</dt>
+                <div id="status-summary-item">
+                    <dt data-i18n="statusLabel">Current status</dt>
                     <dd id="details-status">--</dd>
+                </div>
+                <div>
+                    <dt data-i18n="launchSiteLabel">Launch Site</dt>
+                    <dd id="details-launch-site">--</dd>
+                </div>
+                <div>
+                    <dt data-i18n="launchVehicleLabel">Launch Vehicle</dt>
+                    <dd id="details-launch-vehicle">--</dd>
+                </div>
+                <div>
+                    <dt data-i18n="localLabel">Local</dt>
+                    <dd id="details-local">--</dd>
                 </div>
             </dl>
         </article>
 
         <!-- HISTÓRIA -->
-        <article class="dashboard-card story-card">
+        <article class="dashboard-card story-card" aria-labelledby="story-heading">
 
-            <h2>02 / THE STORY</h2>
+            <h2 id="story-heading" data-i18n="storyHeading">02 / THE STORY</h2>
 
             <div class="story-section">
-                <h3>About the equipment</h3>
+                <h3 data-i18n="aboutEquipment">About the equipment</h3>
                 <p id="story-info"></p>
             </div>
 
             <div class="story-section">
-                <h3>Why is it important?</h3>
+                <h3 data-i18n="objectiveLabel">Objective</h3>
+                <p id="story-objetivo"></p>
+            </div>
+
+            <div class="story-section">
+                <h3 data-i18n="importanceLabel">Why is it important?</h3>
                 <p id="story-importance"></p>
             </div>
 
             <div class="story-section">
-                <h3>Mission context</h3>
+                <h3 data-i18n="contextLabel">Mission context</h3>
                 <p id="story-context"></p>
             </div>
 
@@ -209,9 +250,9 @@
 
 
         <!-- LINHA DO TEMPO -->
-        <article class="dashboard-card timeline-card">
+        <article class="dashboard-card timeline-card" aria-labelledby="timeline-heading">
 
-            <h2>03 / MISSION TIMELINE</h2>
+            <h2 id="timeline-heading" data-i18n="timelineHeading">03 / MISSION TIMELINE</h2>
 
             <div class="timeline" id="mission-timeline"></div>
 
@@ -219,9 +260,9 @@
 
 
         <!-- CURIOSIDADE -->
-        <article class="dashboard-card funfact-card">
+        <article class="dashboard-card funfact-card" aria-labelledby="funfact-heading">
 
-            <h2>04 / DID YOU KNOW?</h2>
+            <h2 id="funfact-heading" data-i18n="funfactHeading">04 / DID YOU KNOW?</h2>
 
             <p id="object-funfact"></p>
 
@@ -229,15 +270,15 @@
 
 
         <!-- NAVEGAÇÃO -->
-        <div class="artifact-navigation">
+        <nav class="artifact-navigation" aria-label="Equipment navigation">
 
-            <button id="previous-artifact" aria-label="Previous equipment">
+            <button id="previous-artifact" aria-label="Previous equipment" data-i18n-aria-label="previousEquipment">
                 ←
             </button>
 
-            <span id="artifact-counter">0 / 0</span>
+            <span id="artifact-counter" role="status" aria-live="polite" aria-atomic="true">0 / 0</span>
 
-            <button id="next-artifact" aria-label="Next equipment">
+            <button id="next-artifact" aria-label="Next equipment" data-i18n-aria-label="nextEquipment">
                 →
             </button>
 
@@ -246,6 +287,8 @@
     </section>
 
 </main>
-        <script src="./scripts/explore.js"></script>
+        <script src="./scripts/i18n.js" defer></script>
+        <script src="./scripts/menu.js" defer></script>
+        <script src="./scripts/explore.js" defer></script>
     </body>
 </html>

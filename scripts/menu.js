@@ -19,19 +19,23 @@
   );
 
   function openMenu() {
-    sideMenu.classList.add('open');
-    overlay.classList.add('show');
+    sideMenu.classList.add('active');
+    overlay.classList.add('active');
+    sideMenu.inert = false;
     hamburger.setAttribute('aria-expanded', 'true');
     sideMenu.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    closeBtn.focus();
   }
 
   function closeMenu() {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('show');
+    sideMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    sideMenu.inert = true;
     hamburger.setAttribute('aria-expanded', 'false');
     sideMenu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    hamburger.focus();
   }
 
   // Eventos de abertura
@@ -47,7 +51,7 @@
 
   // Fechar com Esc
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sideMenu.classList.contains('open')) {
+    if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
       closeMenu();
     }
   });
